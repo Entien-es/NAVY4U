@@ -1,0 +1,71 @@
+﻿@model NAVY4U.Models.donHang
+
+@using NAVY4U.Models;
+
+@{
+    ViewBag.Title = "Danh sách đơn hàng";
+    List<donHang> list = (List<donHang>)ViewData["ListOrder"];
+}
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Danh sách đơn hàng</h2>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã KH
+                                </th>
+                                <th>
+                                    Khách Hàng
+                                </th>
+                                <th>
+                                    Số Đơn Hàng
+                                </th>
+                                <th>
+                                    Ngày Đặt
+                                </th>
+                                <th>
+                                    Địa chỉ
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @{
+                            foreach (var i in Common.GetDonHangs())
+                            {
+                                <tr>
+                                    <td>
+                                        @i.maKH
+                                    </td>
+                                    <td>
+                                        @i.khachHang.tenKH
+                                    </td>
+                                    <td>
+                                        @i.soDH
+                                    </td>
+                                    <td>
+                                        @String.Format("{0:hh:mm:ss [dd MMM yyyy]}", i.ngayDat)
+                                    </td>
+                                    <td>
+                                        @i.diaChiGH
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+<!-- /.content -->

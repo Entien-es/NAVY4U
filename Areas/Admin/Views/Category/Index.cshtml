@@ -1,0 +1,53 @@
+﻿@using NAVY4U.Models
+@{
+    ViewBag.Title = "Index";
+    List<loaiSP> l = ViewBag["DsLoai"];
+}
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Danh mục loại sản phẩm</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Mã loại</th>
+                                <th>Tên loại</th>
+                                <th>Ghi chú</th>
+                                <th>Lệnh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                foreach (var i in l)
+                                {
+
+                                    <tr>
+                                        <td>@i.maLoai</td>
+                                        <td>@i.loaiSP1</td>
+                                        <td>@i.ghiChu</td>
+                                        <td>
+                                            <button class="btn btn-success">Duyệt bài</button>
+                                            <button class="btn btn-primary">Sửa nội dung</button>
+                                            <button class="btn btn-danger">Xoá</button>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

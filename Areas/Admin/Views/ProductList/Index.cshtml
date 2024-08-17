@@ -1,0 +1,84 @@
+﻿@using NAVY4U.Models;
+@{
+    ViewBag.Title = "Sản phẩm đang kinh doanh";
+}
+
+<div class="row">
+    <!-- ============================================================== -->
+    <!-- data table  -->
+    <!-- ============================================================== -->
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">Sản phẩm đang kinh doanh</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Mã sản phẩm
+                                </th>
+                                <th>
+                                    Loại sản phẩm
+                                </th>
+                                <th>
+                                    Ảnh minh hoạ
+                                </th>
+                                <th>
+                                    Tên sản phẩm
+                                </th>
+                                <th>
+                                    Giá bán
+                                </th>
+                                <th>
+                                    Giảm giá
+                                </th>
+                                <th>
+                                    Nhà sản xuất
+                                </th>
+                                <th>
+                                    Trình trạng
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var i in Common.getsanPhams())
+                            {
+                                <tr>
+                                    <td>
+                                        @i.maSP
+                                    </td>
+                                    <td>
+                                        @i.loaiSP
+                                    </td>
+                                    <td>
+                                        <img width="80" src="@i.hinhDD" />
+                                    </td>
+                                    <td>
+                                        @i.tenSP
+                                    </td>
+                                    <td>
+                                        @i.giaBan
+                                    </td>
+                                    <td>
+                                        @i.giamGia
+                                    </td>
+                                    <td>
+                                        @i.nhaSanXuat
+                                    </td>
+                                    <td>
+                                        @i.daDuyet
+                                    </td>
+                                </tr>
+                            }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
